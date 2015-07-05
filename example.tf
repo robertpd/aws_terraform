@@ -1,3 +1,11 @@
+# Key Pair
+#--------------------------------------------------------------
+
+resource "aws_key_pair" "aws-tf-test" {
+  key_name = "aws-tf-test"
+  public_key = "${var.public_key}"
+}
+
 #--------------------------------------------------------------
 # Instance
 #--------------------------------------------------------------
@@ -12,6 +20,8 @@ resource "aws_instance" "main" {
 
     subnet_id = "${aws_subnet.main.id}"
     security_groups = ["${aws_security_group.allow_all.id}"]
+
+    key_name = "aws-tf-test"
 }
 
 #--------------------------------------------------------------

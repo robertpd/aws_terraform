@@ -8,3 +8,6 @@ variable "access_key" {
 variable "secret_key" {
     description = "Please enter your AWS secret key"
 }
+variable "public_key" {
+    description = "Please enter your public key"
+}
